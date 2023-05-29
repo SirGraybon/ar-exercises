@@ -12,3 +12,4 @@ puts @store1.name
 @store1.name = "Toronto"
 
 puts @store1.name
+ 
