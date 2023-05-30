@@ -1,6 +1,17 @@
 class Store < ActiveRecord::Base
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :hourly_rate, numericality: { only_integer: true, less_than_or_equal_to: 200, greater_than_or_equal_to: 40, }
+  validates :name, length: {minimum: 3}
+  validates :annual_revenue, numericality: { only_integer: true, greater_than_or_equal_to: 1, }
+  validate :sells_clothes
   has_many :employees
+  
+  def sells_clothes
+   if mens_apparel.present? || womens_apparel.present?
+    
+   end
+
+      
+    
+    
+  end
 end
+
